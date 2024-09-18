@@ -1,0 +1,5 @@
+slack-bolt
+snowflake-snowpark-python
+slack_sdk
+pandas
+snowflake-connector-python[pandas]
