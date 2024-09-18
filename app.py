@@ -49,9 +49,10 @@ def generate_summary(prompt: str, sql_query: str,data_for_summary: str, conn) ->
     """Generate a summary of the metric output by the bot."""
     prompt = f"""
     You have been answering questions in a slack thread as a slackbot. Your purpose as a slackbot is to retrieve data from our snowflake data warehouse.
-    You've already retrieved data from the warehouse based on the user's question. The user has asked you to provide a summary of the data you've retrieved.
-    Based on the generated content between the <content> tags, provide a summary of the data you've retrieved. The summary should be concise and should
-    make it easy for the user to understand the key insights from the data. Don't include anything else except for the summary text in your response (no headers).
+    You've already retrieved data (between the <data_results> tags) from the warehouse (via a SQL query between the <sql_query> tags) based on 
+    the user's question (between the <prompt> tags). The user has asked you to provide a summary of the data you've retrieved. Provide a summary of 
+    the data you've retrieved. The summary should be concise and should make it easy for the user to understand the key insights from the data. 
+    Don't include anything else except for the summary text in your response (no headers).
 
     <prompt>
     {prompt}
